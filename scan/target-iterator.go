@@ -6,6 +6,11 @@ import (
 	"net"
 )
 
+type Iterator interface {
+	Next() (net.IP, error)
+	Peek() (net.IP, error)
+}
+
 type TargetIterator struct {
 	target string
 	isCIDR bool

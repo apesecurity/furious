@@ -40,11 +40,11 @@ type SynScanner struct {
 	timeout          time.Duration
 	maxRoutines      int
 	jobChan          chan hostJob
-	ti               *TargetIterator
+	ti               Iterator
 	serializeOptions gopacket.SerializeOptions
 }
 
-func NewSynScanner(ti *TargetIterator, timeout time.Duration, paralellism int) *SynScanner {
+func NewSynScanner(ti Iterator, timeout time.Duration, paralellism int) *SynScanner {
 
 	return &SynScanner{
 		serializeOptions: gopacket.SerializeOptions{

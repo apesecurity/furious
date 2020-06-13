@@ -14,10 +14,10 @@ type ConnectScanner struct {
 	timeout     time.Duration
 	maxRoutines int
 	jobChan     chan portJob
-	ti          *TargetIterator
+	ti          Iterator
 }
 
-func NewConnectScanner(ti *TargetIterator, timeout time.Duration, paralellism int) *ConnectScanner {
+func NewConnectScanner(ti Iterator, timeout time.Duration, paralellism int) *ConnectScanner {
 	return &ConnectScanner{
 		timeout:     timeout,
 		maxRoutines: paralellism,
